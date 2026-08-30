@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Hero } from '../components/home/Hero';
-import { TechnicalStrip } from '../components/home/TechnicalStrip';
 import { AboutIntro } from '../components/home/AboutIntro';
 import { IndustryGrid } from '../components/home/IndustryGrid';
 import { ServicesOverview } from '../components/home/ServicesOverview';
@@ -30,65 +29,69 @@ export const HomePage: React.FC = () => {
       {/* 1. Hero */}
       <Hero />
 
-      {/* 2. Technical Strip */}
-      <TechnicalStrip />
-
-      {/* 3. Who We Are / About Intro */}
+      {/* 2. Who We Are / About Intro (01) */}
       <AboutIntro />
 
-      {/* 4. Industries We Serve */}
+      {/* 3. Industries We Serve (02) */}
       <IndustryGrid />
 
-      {/* 5. Engineering & Execution Capabilities */}
+      {/* 4. Engineering & Execution Capabilities (03) */}
       <ServicesOverview />
 
-      {/* 6. Selected Project Experience */}
+      {/* 5. Selected Project Experience (04) */}
       <ProjectShowcase />
 
-      {/* 7. Project Photography Strip (Curated Real Execution Imagery) */}
-      <section className="bg-navy py-16 sm:py-20 border-b border-navy-light/40 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10">
-            <div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 mb-3 text-xs font-bold uppercase tracking-[0.2em] rounded-sm bg-gold/15 text-gold border border-gold/30">
-                <span className="w-1.5 h-1.5 rounded-full bg-gold"></span>
-                <span>Visual Field Evidence</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold uppercase tracking-tight text-white font-heading">
+      {/* 6. Site Photography Strip (Curated Real Execution Imagery) */}
+      <section className="bg-navy-dark py-20 sm:py-28 border-b border-border-navy relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          
+          <div className="flex items-center gap-3 mb-6">
+            <span className="text-xs font-mono font-bold text-navy-deep px-2.5 py-1 bg-gold rounded-sm">
+              05
+            </span>
+            <span className="text-xs font-mono font-bold tracking-[0.25em] text-gold uppercase">
+              VISUAL EVIDENCE // AUTHENTIC SITE PHOTOGRAPHY
+            </span>
+            <span className="h-px flex-1 bg-gradient-to-r from-gold/30 to-transparent"></span>
+          </div>
+
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div className="max-w-2xl">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-white font-heading">
                 Authentic Site Execution
               </h2>
-              <p className="mt-2 text-sm sm:text-base text-gray-300 max-w-xl">
-                On-site photographs showing transformer erection, DRI panel rooms, cable tray networks, and high-mast installations.
+              <p className="mt-4 text-sm sm:text-base text-gray-300 font-sans">
+                On-site photographs documenting heavy transformer erection, DRI panel room setups, and pre-commissioning testing.
               </p>
             </div>
 
             <Link
               to="/gallery"
-              className="mt-4 md:mt-0 btn-gold text-xs px-5 py-2.5 font-bold uppercase tracking-wider inline-flex items-center gap-2 self-start md:self-auto"
+              className="btn-gold text-xs px-6 py-3.5 font-bold uppercase tracking-wider inline-flex items-center gap-2 self-start md:self-auto"
             >
-              <span>Explore Complete Gallery</span>
+              <span>Explore Filterable Gallery</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
-          {/* 6 Photo Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          {/* Asymmetrical Structured 6-Photo Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {homeGalleryItems.map((item, index) => (
               <div
                 key={item.id}
                 onClick={() => openLightbox(index)}
-                className="group relative h-64 rounded-sm overflow-hidden border border-border-navy shadow-lg cursor-pointer bg-navy-dark"
+                className="group relative h-72 rounded-sm overflow-hidden border border-border-navy shadow-xl cursor-pointer bg-navy-deep transition-all duration-300 hover:border-gold"
               >
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500 filter brightness-95"
+                  className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 filter brightness-95 contrast-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-navy-dark/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/40 to-transparent opacity-85 group-hover:opacity-95 transition-opacity"></div>
 
                 {/* Category badge */}
                 <div className="absolute top-3 left-3">
-                  <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-sm bg-navy-dark/90 text-gold border border-gold/30">
+                  <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-sm bg-navy-dark/90 text-gold border border-gold/30">
                     <Tag className="w-3 h-3" />
                     {item.category}
                   </span>
@@ -100,11 +103,11 @@ export const HomePage: React.FC = () => {
                 </div>
 
                 {/* Title and details at bottom */}
-                <div className="absolute bottom-3 left-3 right-3 text-white">
-                  <h4 className="text-sm font-bold uppercase tracking-wide group-hover:text-gold transition-colors line-clamp-1">
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <h4 className="text-sm font-bold uppercase tracking-wide group-hover:text-gold transition-colors line-clamp-1 font-heading">
                     {item.title}
                   </h4>
-                  <p className="text-[11px] text-gray-300 line-clamp-1 mt-0.5">
+                  <p className="text-[11px] text-gray-300 line-clamp-1 mt-0.5 font-sans">
                     {item.description}
                   </p>
                 </div>
@@ -113,7 +116,7 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
 
-        {/* Lightbox for homepage gallery preview */}
+        {/* Lightbox for gallery preview */}
         <LightboxModal
           items={homeGalleryItems}
           currentIndex={lightboxIndex}
@@ -124,16 +127,16 @@ export const HomePage: React.FC = () => {
         />
       </section>
 
-      {/* 8. Safety & Quality (Zero Harm + 5 Pillars) */}
+      {/* 7. Safety & Quality (06) */}
       <SafetyQualitySection />
 
-      {/* 9. Capabilities / Equipment */}
+      {/* 8. Capabilities / Tooling (07) */}
       <CapabilitiesPreview />
 
-      {/* 10. Team / Leadership */}
+      {/* 9. Team / Governance (08) */}
       <TeamPreview />
 
-      {/* 11. Final Project Enquiry CTA */}
+      {/* 10. Final Project Enquiry CTA */}
       <CTASection />
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { SJECLogo } from './SJECLogo';
 
 export const Header: React.FC = () => {
@@ -8,11 +8,9 @@ export const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
-  const isHomePage = location.pathname === '/';
-
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 30) {
+      if (window.scrollY > 20) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -45,35 +43,35 @@ export const Header: React.FC = () => {
     return location.pathname.startsWith(path);
   };
 
-  const headerBgClass = isScrolled || !isHomePage
-    ? 'bg-navy-dark/95 backdrop-blur-md border-b border-navy-light/30 shadow-lg py-2.5 sm:py-3'
-    : 'bg-gradient-to-b from-navy-dark/90 via-navy-dark/40 to-transparent py-4 sm:py-5';
+  const headerBgClass = isScrolled
+    ? 'bg-navy-deep/95 backdrop-blur-md border-b border-navy-light/30 shadow-xl py-2.5'
+    : 'bg-gradient-to-b from-navy-deep/95 via-navy-deep/60 to-transparent py-3 sm:py-4 border-b border-white/5';
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerBgClass}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="group focus:outline-none focus:ring-2 focus:ring-gold/50 rounded-sm">
-            <SJECLogo
-              variant="compact"
-              theme="dark"
-              height={isScrolled ? 38 : 44}
-              className="transition-all duration-300"
-            />
+        <div className="flex items-center justify-between gap-4">
+          
+          {/* Official SJEC Logo (Locked Artwork) */}
+          <Link
+            to="/"
+            className="flex-shrink-0 group focus:outline-none focus:ring-1 focus:ring-gold/60 rounded p-1 bg-white/95 hover:bg-white rounded-sm shadow-sm transition-all"
+            aria-label="SJEC Home"
+          >
+            <SJECLogo height={isScrolled ? 42 : 48} />
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+          {/* Desktop Navigation Bar */}
+          <nav className="hidden xl:flex items-center gap-1">
             {navLinks.map((link) => {
               const active = isNavActive(link.path);
               return (
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`px-3 py-2 text-[13.5px] font-semibold tracking-wide uppercase transition-all duration-200 rounded-sm ${
+                  className={`px-3 py-2 text-[12.5px] font-bold tracking-wider uppercase whitespace-nowrap transition-all duration-200 rounded-sm font-sans ${
                     active
-                      ? 'text-gold bg-gold/10 font-bold border-b-2 border-gold'
+                      ? 'text-gold bg-gold/10 border-b-2 border-gold font-extrabold'
                       : 'text-gray-200 hover:text-gold hover:bg-white/5'
                   }`}
                 >
@@ -83,14 +81,34 @@ export const Header: React.FC = () => {
             })}
           </nav>
 
-          {/* Action CTA */}
-          <div className="hidden lg:flex items-center gap-3">
+          {/* Tablet/Medium Navigation (Compact Text) */}
+          <nav className="hidden lg:flex xl:hidden items-center gap-0.5">
+            {navLinks.map((link) => {
+              const active = isNavActive(link.path);
+              return (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className={`px-2 py-1.5 text-[11.5px] font-bold tracking-wider uppercase whitespace-nowrap transition-all duration-200 rounded-sm font-sans ${
+                    active
+                      ? 'text-gold bg-gold/10 border-b-2 border-gold'
+                      : 'text-gray-200 hover:text-gold hover:bg-white/5'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Desktop Action CTA */}
+          <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
             <Link
               to="/contact"
               className="btn-gold text-xs px-5 py-2.5 uppercase font-bold tracking-wider flex items-center gap-2 group shadow-md"
             >
               <span>Enquire Now</span>
-              <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+              <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
           </div>
 
@@ -98,7 +116,7 @@ export const Header: React.FC = () => {
           <div className="flex items-center gap-2 lg:hidden">
             <Link
               to="/contact"
-              className="px-3 py-1.5 text-xs font-bold uppercase tracking-wider bg-gold text-navy-dark rounded-sm hover:bg-gold-light transition-colors sm:inline-flex hidden"
+              className="px-3 py-1.5 text-xs font-bold uppercase tracking-wider bg-gold text-navy-dark rounded-sm hover:bg-gold-light transition-colors"
             >
               Enquire
             </Link>
@@ -112,41 +130,39 @@ export const Header: React.FC = () => {
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
+
         </div>
       </div>
 
-      {/* Mobile Drawer Navigation */}
+      {/* Mobile Full Screen Navigation Panel */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-full bg-navy-dark border-b border-border-navy shadow-2xl animate-in slide-in-from-top duration-200">
-          <div className="px-4 pt-3 pb-6 space-y-1 max-h-[80vh] overflow-y-auto">
-            {navLinks.map((link) => {
+        <div className="lg:hidden fixed inset-x-0 top-full bg-navy-deep border-b border-border-navy shadow-2xl animate-in slide-in-from-top duration-200">
+          <div className="px-5 pt-4 pb-8 space-y-1 max-h-[85vh] overflow-y-auto blueprint-grid-dark">
+            {navLinks.map((link, idx) => {
               const active = isNavActive(link.path);
               return (
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`block px-4 py-3 text-sm font-semibold tracking-wider uppercase rounded-sm transition-colors ${
+                  className={`flex items-center justify-between px-4 py-3.5 text-sm font-bold tracking-wider uppercase rounded-sm transition-colors font-sans ${
                     active
-                      ? 'text-gold bg-gold/15 border-l-4 border-gold font-bold'
+                      ? 'text-gold bg-gold/15 border-l-4 border-gold'
                       : 'text-gray-200 hover:text-gold hover:bg-navy-surface'
                   }`}
                 >
-                  {link.name}
+                  <span>{link.name}</span>
+                  <span className="text-xs font-mono text-gold/60">0{idx + 1}</span>
                 </Link>
               );
             })}
-            <div className="pt-4 mt-3 border-t border-navy-light/30">
+            <div className="pt-6 mt-4 border-t border-navy-light/30">
               <Link
                 to="/contact"
-                className="w-full btn-gold py-3 text-center text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2"
+                className="w-full btn-gold py-4 text-center text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2"
               >
-                <span>Enquire Now</span>
+                <span>Request Project Proposal</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
-              <div className="mt-4 flex items-center justify-center gap-2 text-xs text-gray-400">
-                <Phone className="w-3.5 h-3.5 text-gold" />
-                <span>contact@sjec.in</span>
-              </div>
             </div>
           </div>
         </div>

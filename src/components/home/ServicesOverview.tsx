@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Zap, Sliders, Cog, Layers, Cpu, Users, ArrowRight, Check } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Zap, Sliders, Cog, Layers, Cpu, Users } from 'lucide-react';
 import { SERVICES } from '../../data/services';
-import { SectionHeader } from '../common/SectionHeader';
 
 const iconMap: Record<string, React.ElementType> = {
   Zap,
@@ -15,83 +14,96 @@ const iconMap: Record<string, React.ElementType> = {
 
 export const ServicesOverview: React.FC = () => {
   return (
-    <section className="bg-white py-16 sm:py-20 lg:py-24 border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="bg-white py-20 sm:py-28 border-b border-border relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
-        <SectionHeader
-          badge="Disciplines &amp; Scope"
-          title="Engineering &amp; Execution Capabilities"
-          subtitle="Delivering comprehensive electrical and instrumentation project scopes with disciplined engineering and turnkey reliability."
-          align="center"
-        />
+        {/* Editorial Section Number & Header */}
+        <div className="flex items-center gap-3 mb-6">
+          <span className="text-xs font-mono font-bold text-gold px-2.5 py-1 bg-navy-dark rounded-sm">
+            03
+          </span>
+          <span className="text-xs font-mono font-bold tracking-[0.25em] text-navy uppercase">
+            WHAT WE DO // ENGINEERING &amp; EXECUTION CAPABILITIES
+          </span>
+          <span className="h-px flex-1 bg-gradient-to-r from-navy/20 to-transparent"></span>
+        </div>
 
-        {/* 6 Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16">
+          <div className="max-w-3xl">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase text-navy font-heading leading-tight tracking-tight">
+              Disciplined Technical Disciplines
+            </h2>
+            <p className="mt-4 text-slate text-base sm:text-lg leading-relaxed font-sans">
+              From power transformer rigging and HT switchgear setup to multi-parameter instrument calibration and automated Robo Lab installations.
+            </p>
+          </div>
+
+          <Link
+            to="/services"
+            className="btn-gold text-xs px-6 py-3.5 inline-flex items-center gap-2 self-start lg:self-auto shadow-md"
+          >
+            <span>Explore Full Scope Catalog</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+
+        {/* 6 Disciplines Technical Matrix (2 Columns of 3 Editorial Rows) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10">
           {SERVICES.map((srv, index) => {
             const Icon = iconMap[srv.iconName] || Zap;
             return (
               <div
                 key={srv.id}
-                className="bg-white border border-border hover:border-gold/60 rounded-sm p-6 sm:p-8 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
+                className="bg-offwhite border-2 border-border hover:border-gold/70 rounded-sm p-7 sm:p-9 shadow-sm hover:shadow-card transition-all duration-300 flex flex-col justify-between group relative"
               >
-                {/* Top Accent Strip */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-navy-light/20 group-hover:bg-gold transition-colors"></div>
-
-                <div>
-                  {/* Icon & Category Indicator */}
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="p-3.5 rounded-sm bg-navy-dark text-gold group-hover:bg-gold group-hover:text-navy-dark transition-colors shadow-sm">
+                {/* Top Corner Technical Index */}
+                <div className="flex items-start justify-between mb-5">
+                  <div className="flex items-center gap-3.5">
+                    <div className="p-3 rounded-sm bg-navy-dark text-gold group-hover:bg-gold group-hover:text-navy-dark transition-colors shadow-sm">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <span className="text-xs font-mono font-bold text-slate/60 group-hover:text-gold transition-colors">
-                      0{index + 1}
-                    </span>
-                  </div>
-
-                  {/* Title & Short Description */}
-                  <h3 className="text-xl font-bold uppercase tracking-tight text-navy group-hover:text-navy-surface font-heading">
-                    {srv.title}
-                  </h3>
-                  <p className="mt-3 text-sm text-slate leading-relaxed">
-                    {srv.shortDesc}
-                  </p>
-
-                  {/* Capability List Items (from factual profile) */}
-                  <div className="mt-6 pt-4 border-t border-border-light space-y-2">
-                    {srv.capabilities.slice(0, 3).map((cap, i) => (
-                      <div key={i} className="flex items-start gap-2 text-xs text-charcoal">
-                        <Check className="w-3.5 h-3.5 text-gold flex-shrink-0 mt-0.5" />
-                        <span className="leading-snug">{cap}</span>
-                      </div>
-                    ))}
+                    <div>
+                      <span className="text-xs font-mono font-bold text-gold tracking-widest uppercase block">
+                        DISCIPLINE 0{index + 1}
+                      </span>
+                      <h3 className="text-xl sm:text-2xl font-extrabold uppercase text-navy font-heading group-hover:text-navy-surface transition-colors mt-0.5">
+                        {srv.title}
+                      </h3>
+                    </div>
                   </div>
                 </div>
 
-                {/* Footer Action Link */}
-                <div className="mt-8 pt-4 border-t border-border-light">
+                <p className="text-slate text-sm sm:text-base leading-relaxed font-sans">
+                  {srv.shortDesc}
+                </p>
+
+                {/* Profile-supported Capability Checklist */}
+                <div className="mt-6 pt-5 border-t border-border-light space-y-2">
+                  <div className="text-[11px] font-mono font-bold text-navy uppercase tracking-wider mb-2">
+                    CORE CAPABILITY HIGHLIGHTS:
+                  </div>
+                  {srv.capabilities.slice(0, 3).map((cap, i) => (
+                    <div key={i} className="flex items-start gap-2 text-xs sm:text-sm text-charcoal font-sans">
+                      <CheckCircle2 className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
+                      <span>{cap}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Footer Action */}
+                <div className="mt-7 pt-4 border-t border-border-light flex items-center justify-between">
                   <Link
-                    to={`/services`}
-                    className="text-xs font-bold uppercase tracking-wider text-navy group-hover:text-gold flex items-center justify-between transition-colors"
+                    to={`/services#${srv.slug}`}
+                    className="text-xs font-bold uppercase tracking-wider text-navy group-hover:text-gold inline-flex items-center gap-1.5 transition-colors font-sans"
                   >
-                    <span>Explore Discipline</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-gold" />
+                    <span>View Technical Scope</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-gold group-hover:translate-x-1 transition-transform" />
                   </Link>
+                  <span className="text-[10px] font-mono text-gray-400 uppercase">VERIFIED SCOPE</span>
                 </div>
               </div>
             );
           })}
-        </div>
-
-        {/* Global Services CTA */}
-        <div className="mt-12 text-center">
-          <Link
-            to="/services"
-            className="btn-gold text-xs px-8 py-3.5 font-bold uppercase tracking-wider inline-flex items-center gap-2"
-          >
-            <span>View Full Service Catalog &amp; Technical Scope</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
         </div>
 
       </div>

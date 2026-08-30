@@ -11,7 +11,7 @@ export default {
           DEFAULT: '#082B57',
           primary: '#082B57',
           dark: '#041B38',
-          deep: '#031226',
+          deep: '#020F20',
           surface: '#0B356B',
           light: '#0E448A',
         },
@@ -44,29 +44,23 @@ export default {
           DEFAULT: '#E4E7EC',
           light: '#F2F4F7',
           dark: '#D0D5DD',
-          navy: '#1A3F70',
+          navy: '#15325B',
         }
       },
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        display: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
-        heading: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+        sans: ['Manrope', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        heading: ['Sora', 'sans-serif'],
+        display: ['Sora', 'sans-serif'],
+        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
       },
       boxShadow: {
-        'card': '0 4px 20px -2px rgba(8, 43, 87, 0.08), 0 2px 6px -1px rgba(8, 43, 87, 0.04)',
-        'card-hover': '0 12px 30px -4px rgba(8, 43, 87, 0.14), 0 4px 12px -2px rgba(8, 43, 87, 0.08)',
+        'card': '0 4px 20px -2px rgba(8, 43, 87, 0.06), 0 2px 6px -1px rgba(8, 43, 87, 0.04)',
+        'card-hover': '0 16px 36px -4px rgba(8, 43, 87, 0.12), 0 4px 12px -2px rgba(8, 43, 87, 0.06)',
         'gold-glow': '0 0 25px rgba(212, 154, 22, 0.35)',
         'navy-glow': '0 0 30px rgba(8, 43, 87, 0.45)',
       },
       animation: {
         'pulse-subtle': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'float': 'float 6s ease-in-out infinite',
-      },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-6px)' },
-        }
       }
     },
   },

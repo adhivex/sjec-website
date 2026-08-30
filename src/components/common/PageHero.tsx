@@ -15,58 +15,58 @@ export const PageHero: React.FC<PageHeroProps> = ({
   title,
   description,
   breadcrumbs = [],
-  bgImage = "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1600&q=80",
+  bgImage = "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=2000&q=85",
 }) => {
   return (
-    <section className="relative bg-navy-dark text-white pt-32 pb-16 sm:pt-36 sm:pb-20 overflow-hidden border-b border-navy-light/30">
+    <section className="relative bg-navy-deep text-white pt-32 pb-18 sm:pt-36 sm:pb-24 overflow-hidden border-b border-navy-light/30">
       {/* Background Image with Dark Navy Gradient Overlay */}
       <div className="absolute inset-0 z-0">
         <img
           src={bgImage}
           alt={title}
-          className="w-full h-full object-cover object-center opacity-20 filter contrast-125"
+          className="w-full h-full object-cover object-center opacity-25 filter contrast-125 brightness-95"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-dark/95 to-navy/90"></div>
-        <div className="absolute inset-0 opacity-10 grid-pattern pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/95 to-navy-dark/90"></div>
+        <div className="absolute inset-0 opacity-15 blueprint-grid-dark pointer-events-none"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb Navigation */}
-        <nav className="flex items-center gap-1.5 text-xs text-gray-400 mb-6 flex-wrap" aria-label="Breadcrumb">
+        <nav className="flex items-center gap-2 text-xs font-mono text-gray-400 mb-6 flex-wrap" aria-label="Breadcrumb">
           <Link to="/" className="inline-flex items-center gap-1 hover:text-gold transition-colors">
-            <Home className="w-3.5 h-3.5" />
-            <span>Home</span>
+            <Home className="w-3.5 h-3.5 text-gold" />
+            <span>HOME</span>
           </Link>
 
           {breadcrumbs.map((crumb, idx) => (
             <React.Fragment key={idx}>
               <ChevronRight className="w-3.5 h-3.5 text-gray-500" />
               {crumb.path ? (
-                <Link to={crumb.path} className="hover:text-gold transition-colors">
+                <Link to={crumb.path} className="hover:text-gold transition-colors uppercase">
                   {crumb.label}
                 </Link>
               ) : (
-                <span className="text-gold font-medium">{crumb.label}</span>
+                <span className="text-gold font-bold uppercase">{crumb.label}</span>
               )}
             </React.Fragment>
           ))}
         </nav>
 
-        {/* Badge */}
+        {/* Technical Badge */}
         {badge && (
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 mb-4 text-xs font-bold uppercase tracking-[0.2em] rounded-sm bg-gold/10 text-gold border border-gold/30">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 mb-4 text-xs font-mono font-bold uppercase tracking-[0.2em] rounded-sm bg-gold/15 text-gold border border-gold/30">
             <span className="w-1.5 h-1.5 rounded-full bg-gold"></span>
             <span>{badge}</span>
           </div>
         )}
 
-        {/* Title */}
+        {/* Title (Sora ExtraBold) */}
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight uppercase leading-tight font-heading max-w-4xl text-white">
           {title}
         </h1>
 
-        {/* Description */}
-        <p className="mt-4 text-base sm:text-lg text-gray-300 max-w-3xl leading-relaxed">
+        {/* Description (Manrope) */}
+        <p className="mt-4 text-base sm:text-lg text-gray-300 max-w-3xl leading-relaxed font-sans">
           {description}
         </p>
 
