@@ -11,97 +11,125 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-[92vh] sm:min-h-[95vh] flex items-center justify-center bg-navy-deep text-white overflow-hidden pt-28 pb-16 sm:pt-32 sm:pb-24">
+    <section className="relative min-h-[92vh] sm:min-h-[95vh] flex items-center bg-navy-deep text-white overflow-hidden pt-28 pb-16 sm:pt-36 sm:pb-24">
       {/* Background Industrial Plant Execution Photography (No watermarks, high visual fidelity) */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=2400&q=90"
           alt="Heavy Industrial Electrical & Process Instrumentation Site"
-          className="w-full h-full object-cover object-center filter contrast-115 brightness-95"
+          className="w-full h-full object-cover object-center filter contrast-115 brightness-90"
         />
         
-        {/* Layered Engineering Gradients (Keeping machinery and plant structure visible) */}
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/95 via-navy-dark/85 to-navy-deep/60"></div>
+        {/* Layered Gradients: Deep Navy to Right Image Reveal */}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/90 to-navy-dark/70"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-transparent to-navy-deep/80"></div>
         
         {/* Subtle Architectural Blueprint Grid */}
-        <div className="absolute inset-0 opacity-15 blueprint-grid-dark pointer-events-none"></div>
-      </div>
-
-      {/* Engineering Technical Grid Lines (Subtle Framing) */}
-      <div className="absolute inset-x-4 sm:inset-x-8 top-28 bottom-12 border border-white/10 pointer-events-none hidden md:block">
-        {/* Top-left Coordinate */}
-        <div className="absolute -top-2.5 left-6 bg-navy-deep px-2 text-[10px] font-mono text-gold tracking-widest uppercase">
-          REF // SJEC-SYS-2026
-        </div>
-        {/* Top-right Lat/Lon */}
-        <div className="absolute -top-2.5 right-6 bg-navy-deep px-2 text-[10px] font-mono text-gray-400 tracking-widest">
-          LAT 20.4625° N / LON 85.8828° E
-        </div>
-        {/* Bottom-left Standard */}
-        <div className="absolute -bottom-2.5 left-6 bg-navy-deep px-2 text-[10px] font-mono text-gray-400 tracking-widest uppercase">
-          DISCIPLINE: HT/LT ELEC &amp; INST
-        </div>
-        {/* Bottom-right Status */}
-        <div className="absolute -bottom-2.5 right-6 bg-navy-deep px-2 text-[10px] font-mono text-gold tracking-widest uppercase flex items-center gap-1.5">
-          <span className="w-1.5 h-1.5 rounded-full bg-gold animate-ping"></span>
-          <span>EXECUTION READY</span>
-        </div>
+        <div className="absolute inset-0 opacity-10 blueprint-grid-dark pointer-events-none"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
-        <div className="max-w-3xl">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Technical Eyebrow Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 mb-6 rounded-sm bg-navy-surface/90 border border-gold/40 text-gold text-xs sm:text-sm font-bold tracking-[0.2em] uppercase font-mono backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-gold"></span>
-            <span>INDUSTRIAL ELECTRICAL &amp; INSTRUMENTATION</span>
+          {/* Left Column (7 cols): Typography & Positioning Statement */}
+          <div className="lg:col-span-7 space-y-6">
+            
+            {/* Eyebrow Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-navy-surface/90 border border-gold/40 text-gold text-xs sm:text-sm font-bold tracking-[0.2em] uppercase font-mono backdrop-blur-md">
+              <span className="w-2 h-2 rounded-full bg-gold"></span>
+              <span>INDUSTRIAL ELECTRICAL &amp; INSTRUMENTATION</span>
+            </div>
+
+            {/* Main Headline (Sora ExtraBold) */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight uppercase leading-[1.06] font-heading">
+              <span className="text-white block">INDUSTRIAL EXPERTISE.</span>
+              <span className="text-gold block mt-1">RELIABLE EXECUTION.</span>
+            </h1>
+
+            {/* Supporting Copy (Manrope) */}
+            <p className="text-base sm:text-lg lg:text-xl text-gray-200 leading-relaxed max-w-2xl font-sans font-normal">
+              Electrical, instrumentation, erection and commissioning solutions for demanding industrial environments.
+            </p>
+
+            {/* Engineering Capability Strip (01 / HT-LT ELECTRICAL, 02 / PROCESS INSTRUMENTATION, 03 / ZERO HARM COMMITMENT) */}
+            <div className="pt-6 border-t border-white/15 grid grid-cols-1 sm:grid-cols-3 gap-3.5 text-xs text-gray-200">
+              <div className="p-3 bg-navy-dark/80 rounded-sm border border-white/10 flex items-center gap-2.5">
+                <Zap className="w-4 h-4 text-gold flex-shrink-0" />
+                <div>
+                  <span className="text-[10px] font-mono text-gold block font-bold">01 //</span>
+                  <span className="font-bold tracking-wide uppercase">HT-LT ELECTRICAL</span>
+                </div>
+              </div>
+
+              <div className="p-3 bg-navy-dark/80 rounded-sm border border-white/10 flex items-center gap-2.5">
+                <Activity className="w-4 h-4 text-gold flex-shrink-0" />
+                <div>
+                  <span className="text-[10px] font-mono text-gold block font-bold">02 //</span>
+                  <span className="font-bold tracking-wide uppercase">PROCESS INSTRUMENTATION</span>
+                </div>
+              </div>
+
+              <div className="p-3 bg-navy-dark/80 rounded-sm border border-gold/40 flex items-center gap-2.5">
+                <ShieldCheck className="w-4 h-4 text-gold flex-shrink-0" />
+                <div>
+                  <span className="text-[10px] font-mono text-gold block font-bold">03 //</span>
+                  <span className="font-bold text-gold tracking-wide uppercase">ZERO HARM COMMITMENT</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Action CTAs */}
+            <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+              <Link
+                to="/services"
+                className="btn-gold px-8 py-4 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 group shadow-xl"
+              >
+                <span>EXPLORE SERVICES</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+
+              <Link
+                to="/projects"
+                className="btn-outline-white px-8 py-4 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2"
+              >
+                <span>VIEW PROJECTS</span>
+                <ArrowRight className="w-4 h-4 text-gold" />
+              </Link>
+            </div>
+
           </div>
 
-          {/* Main Headline (Sora ExtraBold) */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight uppercase leading-[1.08] font-heading">
-            <span className="text-white block">INDUSTRIAL EXPERTISE.</span>
-            <span className="text-gold block mt-1">RELIABLE EXECUTION.</span>
-          </h1>
+          {/* Right Column (5 cols): Large Architectural Plant Feature */}
+          <div className="lg:col-span-5 relative hidden lg:block">
+            <div className="relative rounded-sm overflow-hidden border-2 border-border-navy shadow-2xl group">
+              <img
+                src="https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=1200&q=85"
+                alt="Industrial Substation Erection"
+                className="w-full h-[480px] object-cover filter contrast-115 group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-transparent to-transparent"></div>
 
-          {/* Supporting Copy (Manrope) */}
-          <p className="mt-6 text-base sm:text-lg lg:text-xl text-gray-200 leading-relaxed max-w-2xl font-sans font-normal">
-            Electrical, instrumentation, erection and commissioning solutions for demanding industrial environments.
-          </p>
+              {/* Technical Marker on Image */}
+              <div className="absolute top-4 left-4 bg-navy-deep/90 text-gold text-[10px] font-mono font-bold px-3 py-1 rounded-sm border border-gold/30">
+                FIELD ERECTION // HT/LT SUBSTATION
+              </div>
 
-          {/* Engineering Capability Strip (HT/LT Electrical, Process Instrumentation, Zero Harm Commitment) */}
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-white/15 max-w-2xl text-xs sm:text-sm text-gray-200">
-            <div className="flex items-center gap-2.5 bg-navy-dark/60 p-2.5 rounded-sm border border-white/10">
-              <Zap className="w-4 h-4 text-gold flex-shrink-0" />
-              <span className="font-semibold tracking-wide">HT/LT Electrical</span>
+              {/* Bottom Technical Spec */}
+              <div className="absolute bottom-4 left-4 right-4 bg-navy-deep/95 border border-border-navy p-4 rounded-sm">
+                <div className="text-[10px] font-mono text-gold uppercase tracking-wider">COMMISSIONING STANDARD</div>
+                <div className="text-xs font-bold uppercase text-white font-heading mt-0.5">
+                  Disciplined Turnkey Project Execution
+                </div>
+              </div>
             </div>
-            <div className="flex items-center gap-2.5 bg-navy-dark/60 p-2.5 rounded-sm border border-white/10">
-              <Activity className="w-4 h-4 text-gold flex-shrink-0" />
-              <span className="font-semibold tracking-wide">Process Instrumentation</span>
-            </div>
-            <div className="flex items-center gap-2.5 bg-navy-dark/60 p-2.5 rounded-sm border border-gold/30">
-              <ShieldCheck className="w-4 h-4 text-gold flex-shrink-0" />
-              <span className="font-bold text-gold tracking-wide">Zero Harm Commitment</span>
-            </div>
-          </div>
 
-          {/* Action CTAs */}
-          <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-            <Link
-              to="/services"
-              className="btn-gold px-8 py-4 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 group shadow-xl"
-            >
-              <span>Explore Services</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-
-            <Link
-              to="/projects"
-              className="btn-outline-white px-8 py-4 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2"
-            >
-              <span>View Projects</span>
-              <ArrowRight className="w-4 h-4 text-gold" />
-            </Link>
+            {/* Asymmetric Floating Accent Badge */}
+            <div className="absolute -bottom-4 -left-6 bg-gold text-navy-dark p-3.5 rounded-sm shadow-xl border-2 border-white max-w-[200px]">
+              <div className="text-[10px] font-extrabold uppercase font-mono tracking-wider">PROVEN CAPABILITY</div>
+              <div className="text-xs font-black uppercase mt-0.5 leading-tight font-heading">
+                Cement, Steel &amp; DRI Plants
+              </div>
+            </div>
           </div>
 
         </div>

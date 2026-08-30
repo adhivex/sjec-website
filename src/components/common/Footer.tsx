@@ -168,15 +168,29 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        {/* Bottom Bar: Tagline & Copyright */}
-        <div className="mt-12 pt-6 border-t border-navy-light/30 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+        {/* Official Tagline Banner */}
+        <div className="mt-12 pt-6 border-t border-navy-light/30 flex items-center justify-between text-xs text-gray-300 font-mono">
+          <span className="text-gold font-bold tracking-[0.2em] uppercase text-[11px] sm:text-xs">
+            POWERED BY FAITH CONNECTED BY TRUST
+          </span>
+          <span className="text-gray-400 hidden sm:inline">sjec.in</span>
+        </div>
+
+        {/* Refined Copyright Bar & ADHIVEX Development Credit */}
+        <div className="mt-6 pt-6 border-t border-navy-light/20 flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs text-gray-400 gap-3 font-sans">
           <div>
             &copy; 2026 Sai Jagannath Engineering &amp; Construction. All Rights Reserved.
           </div>
-          <div className="flex items-center gap-3 text-gray-300 font-mono text-[11px]">
-            <span className="text-gold font-bold tracking-widest uppercase">POWERED BY FAITH CONNECTED BY TRUST</span>
-            <span>|</span>
-            <span className="text-gray-400">sjec.in</span>
+          <div>
+            Designed &amp; Developed by{' '}
+            <a
+              href="https://adhivex.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-gold font-semibold transition-colors underline decoration-gold/40 hover:decoration-gold"
+            >
+              ADHIVEX
+            </a>
           </div>
         </div>
       </div>
