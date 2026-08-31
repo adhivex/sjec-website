@@ -25,10 +25,10 @@ export const IndustryGrid: React.FC = () => {
 
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
           <div className="max-w-2xl">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase text-navy font-heading leading-tight tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold uppercase text-navy font-heading leading-tight tracking-tight">
               Sectors Built for Demanding Execution
             </h2>
-            <p className="mt-4 text-slate text-base sm:text-lg leading-relaxed font-sans">
+            <p className="mt-3 text-slate text-sm sm:text-base leading-relaxed font-sans font-normal">
               Our engineering footprint spans heavy industrial facilities where thermal stresses, high voltage loads, and continuous operations require uncompromising precision.
             </p>
           </div>
@@ -68,10 +68,10 @@ export const IndustryGrid: React.FC = () => {
                   </div>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-extrabold uppercase text-white font-heading">
+                <h3 className="text-xl sm:text-2xl font-semibold uppercase text-white font-heading">
                   {featuredCement.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-gray-200 line-clamp-2 max-w-xl font-sans">
+                <p className="text-xs sm:text-sm text-gray-200 line-clamp-2 max-w-xl font-sans font-normal">
                   {featuredCement.description}
                 </p>
                 <div className="pt-2 flex flex-wrap gap-2 text-[11px] font-mono text-gold">
@@ -106,7 +106,7 @@ export const IndustryGrid: React.FC = () => {
                   </div>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-extrabold uppercase text-white font-heading">
+                <h3 className="text-xl sm:text-2xl font-semibold uppercase text-white font-heading">
                   {featuredSteel.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-gray-200 line-clamp-2 font-sans">

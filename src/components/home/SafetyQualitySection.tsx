@@ -25,10 +25,10 @@ export const SafetyQualitySection: React.FC = () => {
         </div>
 
         <div className="max-w-3xl mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase text-white font-heading leading-tight tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold uppercase text-white font-heading leading-tight tracking-tight">
             Safety. Quality. Responsibility.
           </h2>
-          <p className="mt-4 text-gray-300 text-base sm:text-lg leading-relaxed font-sans">
+          <p className="mt-3 text-gray-300 text-sm sm:text-base leading-relaxed font-sans font-normal">
             Our non-negotiable operational ethos: zero compromise on personnel health, dielectric safety protocols, and calibrated engineering precision.
           </p>
         </div>

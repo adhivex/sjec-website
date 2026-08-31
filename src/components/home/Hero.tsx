@@ -40,10 +40,12 @@ export const Hero: React.FC = () => {
               <span className="truncate">INDUSTRIAL ELECTRICAL &amp; INSTRUMENTATION</span>
             </div>
 
-            {/* Main Headline (Sora ExtraBold) */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-extrabold tracking-tight uppercase leading-[1.08] font-heading break-words">
-              <span className="text-white block">INDUSTRIAL EXPERTISE.</span>
-              <span className="text-gold block mt-1">RELIABLE EXECUTION.</span>
+            {/* Main Headline (Refined Modern Industrial Typography - Semi-Bold 600) */}
+            <h1 className="text-[24px] sm:text-[28px] lg:text-[32px] xl:text-[38px] 2xl:text-[42px] font-semibold tracking-tight uppercase leading-[1.10] font-heading max-w-sm sm:max-w-md lg:max-w-[380px] xl:max-w-[420px]">
+              <span className="text-white block">INDUSTRIAL</span>
+              <span className="text-white block">EXPERTISE.</span>
+              <span className="text-gold block">RELIABLE</span>
+              <span className="text-gold block">EXECUTION.</span>
             </h1>
 
             {/* Supporting Copy (Manrope) */}

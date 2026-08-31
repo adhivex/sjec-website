@@ -30,10 +30,10 @@ export const ServicesOverview: React.FC = () => {
 
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16">
           <div className="max-w-3xl">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase text-navy font-heading leading-tight tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold uppercase text-navy font-heading leading-tight tracking-tight">
               Disciplined Technical Disciplines
             </h2>
-            <p className="mt-4 text-slate text-base sm:text-lg leading-relaxed font-sans">
+            <p className="mt-3 text-slate text-sm sm:text-base leading-relaxed font-sans font-normal">
               From power transformer rigging and HT switchgear setup to multi-parameter instrument calibration and automated Robo Lab installations.
             </p>
           </div>
@@ -66,7 +66,7 @@ export const ServicesOverview: React.FC = () => {
                       <span className="text-xs font-mono font-bold text-gold tracking-widest uppercase block">
                         DISCIPLINE 0{index + 1}
                       </span>
-                      <h3 className="text-xl sm:text-2xl font-extrabold uppercase text-navy font-heading group-hover:text-navy-surface transition-colors mt-0.5">
+                      <h3 className="text-lg sm:text-xl font-semibold uppercase text-navy font-heading group-hover:text-navy-surface transition-colors mt-0.5">
                         {srv.title}
                       </h3>
                     </div>

@@ -18,21 +18,21 @@ export const PageHero: React.FC<PageHeroProps> = ({
   bgImage = "/images/hero-bg-plant.jpg",
 }) => {
   return (
-    <section className="relative bg-navy-deep text-white pt-32 pb-18 sm:pt-36 sm:pb-24 overflow-hidden border-b border-navy-light/30">
+    <section className="relative bg-navy-deep text-white pt-28 pb-12 sm:pt-32 sm:pb-16 overflow-hidden border-b border-border-navy">
       {/* Background Image with Dark Navy Gradient Overlay */}
       <div className="absolute inset-0 z-0">
         <img
           src={bgImage}
           alt={title}
-          className="w-full h-full object-cover object-center opacity-25 filter contrast-125 brightness-95"
+          className="w-full h-full object-cover object-center opacity-25 filter contrast-125 brightness-90"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/95 to-navy-dark/90"></div>
-        <div className="absolute inset-0 opacity-15 blueprint-grid-dark pointer-events-none"></div>
+        <div className="absolute inset-0 opacity-10 blueprint-grid-dark pointer-events-none"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb Navigation */}
-        <nav className="flex items-center gap-2 text-xs font-mono text-gray-400 mb-6 flex-wrap" aria-label="Breadcrumb">
+        <nav className="flex items-center gap-2 text-xs font-mono text-gray-400 mb-5 flex-wrap" aria-label="Breadcrumb">
           <Link to="/" className="inline-flex items-center gap-1 hover:text-gold transition-colors">
             <Home className="w-3.5 h-3.5 text-gold" />
             <span>HOME</span>
@@ -54,26 +54,26 @@ export const PageHero: React.FC<PageHeroProps> = ({
 
         {/* Technical Badge */}
         {badge && (
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 mb-4 text-xs font-mono font-bold uppercase tracking-[0.2em] rounded-sm bg-gold/15 text-gold border border-gold/30">
-            <span className="w-1.5 h-1.5 rounded-full bg-gold"></span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 mb-3 rounded-sm bg-navy-surface/90 border border-gold/40 text-gold text-xs font-bold tracking-[0.18em] uppercase font-mono backdrop-blur-md shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-gold flex-shrink-0"></span>
             <span>{badge}</span>
           </div>
         )}
 
-        {/* Title (Sora ExtraBold) */}
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight uppercase leading-tight font-heading max-w-4xl text-white">
+        {/* Title (Sora SemiBold, Controlled & Clean) */}
+        <h1 className="text-2xl sm:text-3xl lg:text-[36px] font-semibold tracking-tight uppercase leading-[1.12] font-heading max-w-3xl text-white">
           {title}
         </h1>
 
         {/* Description (Manrope) */}
-        <p className="mt-4 text-base sm:text-lg text-gray-300 max-w-3xl leading-relaxed font-sans">
+        <p className="mt-3 text-sm sm:text-base text-gray-300 max-w-2xl leading-relaxed font-sans font-normal">
           {description}
         </p>
 
         {/* Decorative Gold Accent Bar */}
-        <div className="mt-6 flex items-center gap-1.5">
-          <span className="h-1 w-16 bg-gold rounded-full"></span>
-          <span className="h-1 w-3 bg-white/40 rounded-full"></span>
+        <div className="mt-5 flex items-center gap-1.5">
+          <span className="h-0.5 w-12 bg-gold rounded-full"></span>
+          <span className="h-0.5 w-2 bg-white/40 rounded-full"></span>
         </div>
       </div>
     </section>

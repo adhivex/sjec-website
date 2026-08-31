@@ -21,7 +21,7 @@ export const IndustriesPage: React.FC = () => {
   }, [slug]);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-navy-deep text-white">
       {/* Page Hero */}
       <PageHero
         badge="Industrial Sectors"
@@ -31,38 +31,28 @@ export const IndustriesPage: React.FC = () => {
       />
 
       {/* Quick Navigation Anchor Bar */}
-      <div className="bg-navy border-b border-navy-light/40 sticky top-[60px] sm:top-[68px] z-30 shadow-md">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto py-2.5 flex items-center gap-2 sm:gap-4 no-scrollbar">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-gold flex-shrink-0 mr-1">
-            Sectors:
+      <div className="bg-navy-dark/95 border-b border-border-navy sticky top-[56px] sm:top-[64px] z-30 shadow-lg backdrop-blur-md">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto py-2.5 flex items-center gap-2 sm:gap-3 no-scrollbar">
+          <span className="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider text-gold flex-shrink-0 mr-1">
+            SECTOR JUMP:
           </span>
-          {INDUSTRIES.map((ind) => (
+          {INDUSTRIES.map((ind, idx) => (
             <a
               key={ind.id}
               href={`#${ind.slug}`}
-              className="text-xs font-semibold text-gray-200 hover:text-gold uppercase tracking-wider px-3 py-1 rounded bg-navy-dark/80 border border-navy-light/30 flex-shrink-0 transition-colors whitespace-nowrap"
+              className="text-[11px] sm:text-xs font-bold text-gray-300 hover:text-gold uppercase tracking-wider px-3 py-1 rounded-sm bg-navy-surface border border-navy-light/30 flex-shrink-0 transition-colors whitespace-nowrap"
             >
-              {ind.title}
+              0{idx + 1} // {ind.title}
             </a>
           ))}
         </div>
       </div>
 
-      {/* Intro Overview */}
-      <section className="py-12 bg-offwhite border-b border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-          <h2 className="text-xl sm:text-2xl font-extrabold uppercase text-navy font-heading">
-            Tailored Engineering for Demanding Process Environments
-          </h2>
-          <p className="mt-3 text-sm sm:text-base text-slate leading-relaxed">
-            Every industrial sector operates with distinct electrical loads, hazardous area classifications, process control loops, and environmental conditions. SJEC engineers bring deep domain expertise to ensure resilient installations.
-          </p>
-        </div>
-      </section>
-
       {/* 6 Industry Sections */}
-      <section className="py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24">
+      <section className="py-16 sm:py-24 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 pointer-events-none blueprint-grid-dark"></div>
+
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 sm:space-y-28">
           {INDUSTRIES.map((industry: Industry, index: number) => {
             const isEven = index % 2 === 1;
 
@@ -70,52 +60,57 @@ export const IndustriesPage: React.FC = () => {
               <div
                 key={industry.id}
                 id={industry.slug}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center pt-16 -mt-16"
+                className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center pt-16 -mt-16"
               >
                 {/* Visual Image */}
-                <div className={`lg:col-span-5 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
-                  <div className="relative rounded-sm overflow-hidden border-2 border-border shadow-card group">
+                <div className={`lg:col-span-5 min-w-0 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
+                  <div className="relative w-full rounded-sm overflow-hidden border-2 border-border-navy shadow-2xl bg-navy-dark group">
                     <img
                       src={industry.image}
                       alt={industry.title}
-                      className="w-full h-[360px] sm:h-[420px] object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-[360px] sm:h-[420px] object-cover filter contrast-110 group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/80 via-navy-dark/20 to-transparent"></div>
-                    <div className="absolute top-4 left-4 bg-gold text-navy-dark text-xs font-black px-3 py-1 rounded-sm uppercase tracking-wider">
-                      Sector 0{index + 1}
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-transparent to-transparent"></div>
+                    
+                    {/* Top spec tag */}
+                    <div className="absolute top-3 left-3 bg-navy-deep/90 text-gold text-[9px] font-mono font-bold px-2.5 py-1 rounded-sm border border-gold/30 backdrop-blur-sm">
+                      SECTOR 0{index + 1} // CORE
                     </div>
-                    <div className="absolute bottom-4 left-4 right-4 text-white">
-                      <div className="text-xs text-gold uppercase font-bold tracking-wider">{industry.subtitle}</div>
-                      <div className="text-lg font-extrabold uppercase font-heading">{industry.title}</div>
+
+                    <div className="absolute bottom-3 left-3 right-3 bg-navy-deep/95 p-3 rounded-sm border border-border-navy text-white text-xs backdrop-blur-md">
+                      <div className="text-[10px] text-gold uppercase font-mono font-bold">{industry.subtitle}</div>
+                      <div className="text-sm font-bold uppercase font-heading text-white mt-0.5">{industry.title}</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Content & Scope */}
-                <div className={`lg:col-span-7 space-y-6 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
+                <div className={`lg:col-span-7 space-y-5 sm:space-y-6 min-w-0 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
                   <div>
-                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-gold">Industrial Sector</span>
-                    <h3 className="text-2xl sm:text-3xl font-extrabold uppercase text-navy font-heading mt-1">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-gold">
+                      INDUSTRIAL SECTOR 0{index + 1}
+                    </span>
+                    <h2 className="text-2xl sm:text-3xl font-semibold uppercase text-white font-heading tracking-tight mt-1">
                       {industry.title}
-                    </h3>
-                    <p className="text-sm font-semibold text-slate mt-0.5">{industry.subtitle}</p>
+                    </h2>
+                    <p className="text-xs sm:text-sm font-mono text-gray-400 mt-1">{industry.subtitle}</p>
                   </div>
 
-                  <p className="text-slate text-base leading-relaxed">
+                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-sans font-normal">
                     {industry.description}
                   </p>
 
                   {/* Key Execution Focus */}
-                  <div className="bg-offwhite p-5 rounded-sm border border-border space-y-3">
-                    <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-navy flex items-center gap-2">
+                  <div className="bg-navy-surface/60 p-4 sm:p-5 rounded-sm border border-navy-light/30 space-y-3">
+                    <h3 className="text-xs font-mono font-bold uppercase tracking-[0.18em] text-gold flex items-center gap-2">
                       <Zap className="w-4 h-4 text-gold" />
                       Key Execution Focus
-                    </h4>
+                    </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {industry.keyExecutionFocus.map((focus: string, i: number) => (
-                        <div key={i} className="flex items-start gap-2 text-xs text-charcoal">
+                        <div key={i} className="flex items-start gap-2 text-xs text-gray-200">
                           <span className="w-1.5 h-1.5 rounded-full bg-gold mt-1.5 flex-shrink-0"></span>
-                          <span>{focus}</span>
+                          <span className="leading-snug">{focus}</span>
                         </div>
                       ))}
                     </div>
@@ -123,27 +118,35 @@ export const IndustriesPage: React.FC = () => {
 
                   {/* Typical Project Scope */}
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-navy mb-2">
+                    <h3 className="text-xs font-mono font-bold uppercase tracking-[0.18em] text-gold mb-2.5">
                       Typical Execution Scope
-                    </h4>
-                    <ul className="space-y-1.5 text-xs sm:text-sm text-slate">
+                    </h3>
+                    <ul className="space-y-2 text-xs sm:text-sm text-gray-300 font-sans">
                       {industry.typicalScope.map((scope: string, j: number) => (
-                        <li key={j} className="flex items-start gap-2">
+                        <li key={j} className="flex items-start gap-2 bg-navy-surface/30 p-2.5 rounded-sm border border-navy-light/20">
                           <CheckCircle2 className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-                          <span>{scope}</span>
+                          <span className="leading-snug">{scope}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
                   {/* CTA */}
-                  <div className="pt-2">
+                  <div className="pt-2 flex flex-wrap items-center gap-3">
                     <Link
                       to="/contact"
-                      className="btn-navy text-xs px-6 py-3 font-bold uppercase tracking-wider inline-flex items-center gap-2"
+                      className="btn-gold text-xs px-6 py-3 font-bold uppercase tracking-wider inline-flex items-center gap-2 group shadow-md"
                     >
                       <span>Discuss {industry.title} Project</span>
-                      <ArrowRight className="w-4 h-4 text-gold" />
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+
+                    <Link
+                      to="/projects"
+                      className="btn-outline-white text-xs px-5 py-3 font-bold uppercase tracking-wider inline-flex items-center gap-1.5"
+                    >
+                      <span>View Sector Projects</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-gold" />
                     </Link>
                   </div>
                 </div>

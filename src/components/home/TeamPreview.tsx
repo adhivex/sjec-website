@@ -24,10 +24,10 @@ export const TeamPreview: React.FC = () => {
 
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14">
           <div className="max-w-3xl">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase text-navy font-heading leading-tight tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold uppercase text-navy font-heading leading-tight tracking-tight">
               Experienced Project Leadership
             </h2>
-            <p className="mt-4 text-slate text-base sm:text-lg leading-relaxed font-sans">
+            <p className="mt-3 text-slate text-sm sm:text-base leading-relaxed font-sans font-normal">
               Guided by veteran industrial advisors from SAIL and Tata Growth Shop, supported by certified project engineers with decades of field commissioning experience.
             </p>
           </div>

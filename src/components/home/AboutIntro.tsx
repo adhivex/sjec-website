@@ -26,7 +26,7 @@ export const AboutIntro: React.FC = () => {
           
           {/* Left Column (7 cols): Bold Headline & Narrative */}
           <div className="lg:col-span-7 space-y-6">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase text-navy font-heading leading-[1.1] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold uppercase text-navy font-heading leading-tight tracking-tight">
               Engineering &amp; Construction For Industrial Infrastructure
             </h2>
 

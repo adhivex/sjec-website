@@ -32,10 +32,10 @@ export const ProjectShowcase: React.FC = () => {
 
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
           <div className="max-w-3xl">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase text-white font-heading leading-tight tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold uppercase text-white font-heading leading-tight tracking-tight">
               Selected Project Experience
             </h2>
-            <p className="mt-4 text-gray-300 text-base sm:text-lg leading-relaxed font-sans">
+            <p className="mt-3 text-gray-300 text-sm sm:text-base leading-relaxed font-sans font-normal">
               Industrial execution across cement, steel, DRI, and iron ore pelletization facilities across Odisha and eastern India.
             </p>
           </div>
