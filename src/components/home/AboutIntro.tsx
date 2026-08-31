@@ -94,10 +94,10 @@ export const AboutIntro: React.FC = () => {
               </div>
             </div>
 
-            {/* Asymmetrical Floating Engineering Badge */}
-            <div className="absolute -bottom-5 -right-4 sm:-right-6 bg-gold text-navy-dark p-4 rounded-sm shadow-xl border-2 border-white max-w-[220px] hidden sm:block">
-              <div className="text-[10px] font-extrabold uppercase font-mono tracking-wider">SAFETY COMMITMENT</div>
-              <div className="text-xs font-black uppercase mt-1 leading-tight font-heading">
+            {/* Asymmetrical Floating Engineering Badge (Contained within column) */}
+            <div className="absolute -bottom-3 right-3 sm:right-4 bg-gold text-navy-dark p-3.5 rounded-sm shadow-xl border-2 border-white max-w-[200px] hidden sm:block z-20">
+              <div className="text-[9px] font-extrabold uppercase font-mono tracking-wider">SAFETY COMMITMENT</div>
+              <div className="text-xs font-black uppercase mt-0.5 leading-tight font-heading">
                 Zero Harm Culture On Every Plant Site
               </div>
             </div>

@@ -48,9 +48,9 @@ export const Header: React.FC = () => {
     : 'bg-gradient-to-b from-navy-deep/95 via-navy-deep/75 to-transparent py-2.5 sm:py-3.5 border-b border-white/5';
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerBgClass}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-4">
+    <header className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${headerBgClass}`}>
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-2 sm:gap-4 w-full">
           
           {/* Official SJEC Logo (Locked Artwork with clean, refined framing) */}
           <Link
@@ -58,18 +58,18 @@ export const Header: React.FC = () => {
             className="flex-shrink-0 group focus:outline-none focus:ring-1 focus:ring-gold/60 p-1 bg-white/95 hover:bg-white rounded-[3px] border border-border-navy shadow-sm transition-all flex items-center justify-center"
             aria-label="SJEC Home"
           >
-            <SJECLogo height={isScrolled ? 38 : 44} />
+            <SJECLogo height={isScrolled ? 36 : 42} />
           </Link>
 
-          {/* Desktop Navigation Bar (XL Screens) */}
-          <nav className="hidden xl:flex items-center gap-1">
+          {/* Desktop Navigation Bar (Full screen >= 1200px / XL) */}
+          <nav className="hidden xl:flex items-center justify-center gap-1 2xl:gap-1.5 flex-1 min-w-0 mx-2">
             {navLinks.map((link) => {
               const active = isNavActive(link.path);
               return (
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`px-3 py-1.5 text-[12px] font-bold tracking-wider uppercase whitespace-nowrap transition-all duration-200 rounded-sm font-sans ${
+                  className={`px-2.5 2xl:px-3 py-1.5 text-[11.5px] 2xl:text-[12px] font-bold tracking-wide uppercase whitespace-nowrap transition-all duration-200 rounded-sm font-sans ${
                     active
                       ? 'text-gold bg-gold/10 border-b-2 border-gold font-extrabold'
                       : 'text-gray-200 hover:text-gold hover:bg-white/5'
@@ -81,17 +81,17 @@ export const Header: React.FC = () => {
             })}
           </nav>
 
-          {/* Tablet/Medium Navigation (LG Screens) */}
-          <nav className="hidden lg:flex xl:hidden items-center gap-0.5">
+          {/* Compact Desktop Navigation Bar (1024px to 1199px / LG) */}
+          <nav className="hidden lg:flex xl:hidden items-center justify-center gap-0.5 flex-1 min-w-0 mx-1">
             {navLinks.map((link) => {
               const active = isNavActive(link.path);
               return (
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`px-2 py-1.5 text-[11px] font-bold tracking-wider uppercase whitespace-nowrap transition-all duration-200 rounded-sm font-sans ${
+                  className={`px-1.5 py-1 text-[10.5px] font-bold tracking-normal uppercase whitespace-nowrap transition-all duration-200 rounded-sm font-sans ${
                     active
-                      ? 'text-gold bg-gold/10 border-b-2 border-gold'
+                      ? 'text-gold bg-gold/10 border-b border-gold'
                       : 'text-gray-200 hover:text-gold hover:bg-white/5'
                   }`}
                 >
@@ -101,11 +101,11 @@ export const Header: React.FC = () => {
             })}
           </nav>
 
-          {/* Desktop Action CTA */}
+          {/* Desktop Action CTA (Never clipped, flex-shrink-0) */}
           <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
             <Link
               to="/contact"
-              className="btn-gold text-xs px-5 py-2 uppercase font-bold tracking-wider flex items-center gap-2 group shadow-md"
+              className="btn-gold text-xs px-4 xl:px-5 py-2 uppercase font-bold tracking-wider flex items-center gap-1.5 xl:gap-2 group shadow-md whitespace-nowrap"
             >
               <span>Enquire Now</span>
               <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
@@ -113,10 +113,10 @@ export const Header: React.FC = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center gap-2 lg:hidden">
+          <div className="flex items-center gap-2 lg:hidden flex-shrink-0">
             <Link
               to="/contact"
-              className="px-3 py-1 text-xs font-bold uppercase tracking-wider bg-gold text-navy-dark rounded-sm hover:bg-gold-light transition-colors"
+              className="px-3 py-1 text-xs font-bold uppercase tracking-wider bg-gold text-navy-dark rounded-sm hover:bg-gold-light transition-colors whitespace-nowrap"
             >
               Enquire
             </Link>

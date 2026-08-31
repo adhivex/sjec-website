@@ -60,9 +60,9 @@ export const SafetyQualityPage: React.FC = () => {
                   className="w-full h-[400px] object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-navy-dark text-white p-5 rounded-sm border border-border-navy shadow-xl max-w-xs hidden sm:block">
-                <div className="text-xs font-bold uppercase tracking-wider text-gold">Safety Culture</div>
-                <div className="text-sm font-bold uppercase mt-1">Zero Harm to Personnel &amp; Equipment</div>
+              <div className="absolute -bottom-3 right-3 sm:right-4 bg-navy-dark text-white p-4 rounded-sm border border-border-navy shadow-xl max-w-xs hidden sm:block z-20">
+                <div className="text-[10px] font-bold uppercase tracking-wider text-gold font-mono">Safety Culture</div>
+                <div className="text-xs font-bold uppercase mt-0.5">Zero Harm to Personnel &amp; Equipment</div>
               </div>
             </div>
           </div>
