@@ -24,7 +24,7 @@ export const SERVICES: Service[] = [
       "Megger Insulation Resistance Testing & Phase Balancing",
       "High-precision cable glanding and ferrule identification"
     ],
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80"
+    image: "/images/hero-substation.jpg"
   },
   {
     id: "instrumentation",
@@ -50,7 +50,7 @@ export const SERVICES: Service[] = [
       "Instrument Air Header & Stainless Steel Impulse Line Hookup",
       "Distributed I/O Rack Termination & Shield Grounding"
     ],
-    image: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=80"
+    image: "/images/panel-room-mcc.jpg"
   },
   {
     id: "erection-commissioning",
@@ -74,7 +74,7 @@ export const SERVICES: Service[] = [
       "Substation Switchgear Interlock & Protection Relay Checks",
       "Zero-downtime cutover and hot commissioning supervision"
     ],
-    image: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80"
+    image: "/images/plant-cement-mill.jpg"
   },
   {
     id: "cable-systems",
@@ -98,7 +98,7 @@ export const SERVICES: Service[] = [
       "Standardized heat-shrink and cold-shrink termination kits",
       "Robust fire-stop and penetration sealing at switchroom entries"
     ],
-    image: "https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=1200&q=80"
+    image: "/images/cable-tray-install.jpg"
   },
   {
     id: "automation-plc",
@@ -122,7 +122,7 @@ export const SERVICES: Service[] = [
       "Loop testing from field transmitters to central DCS/PLC I/O cards",
       "Uninterruptible Power Supply (UPS) control power integration"
     ],
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+    image: "/images/panel-room-mcc.jpg"
   },
   {
     id: "industrial-manpower",
@@ -146,6 +146,6 @@ export const SERVICES: Service[] = [
       "Continuous on-site supervision by AMIE / B.Tech qualified managers",
       "Strict adherence to statutory safety and welfare standards"
     ],
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80"
+    image: "/images/plant-steel-dri.jpg"
   }
 ];

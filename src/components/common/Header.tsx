@@ -44,24 +44,24 @@ export const Header: React.FC = () => {
   };
 
   const headerBgClass = isScrolled
-    ? 'bg-navy-deep/95 backdrop-blur-md border-b border-navy-light/30 shadow-xl py-2.5'
-    : 'bg-gradient-to-b from-navy-deep/95 via-navy-deep/60 to-transparent py-3 sm:py-4 border-b border-white/5';
+    ? 'bg-navy-deep/95 backdrop-blur-md border-b border-navy-light/30 shadow-lg py-2'
+    : 'bg-gradient-to-b from-navy-deep/95 via-navy-deep/75 to-transparent py-2.5 sm:py-3.5 border-b border-white/5';
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerBgClass}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4">
           
-          {/* Official SJEC Logo (Locked Artwork) */}
+          {/* Official SJEC Logo (Locked Artwork with clean, refined framing) */}
           <Link
             to="/"
-            className="flex-shrink-0 group focus:outline-none focus:ring-1 focus:ring-gold/60 rounded p-1 bg-white/95 hover:bg-white rounded-sm shadow-sm transition-all"
+            className="flex-shrink-0 group focus:outline-none focus:ring-1 focus:ring-gold/60 p-1 bg-white/95 hover:bg-white rounded-[3px] border border-border-navy shadow-sm transition-all flex items-center justify-center"
             aria-label="SJEC Home"
           >
-            <SJECLogo height={isScrolled ? 42 : 48} />
+            <SJECLogo height={isScrolled ? 38 : 44} />
           </Link>
 
-          {/* Desktop Navigation Bar */}
+          {/* Desktop Navigation Bar (XL Screens) */}
           <nav className="hidden xl:flex items-center gap-1">
             {navLinks.map((link) => {
               const active = isNavActive(link.path);
@@ -69,7 +69,7 @@ export const Header: React.FC = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`px-3 py-2 text-[12.5px] font-bold tracking-wider uppercase whitespace-nowrap transition-all duration-200 rounded-sm font-sans ${
+                  className={`px-3 py-1.5 text-[12px] font-bold tracking-wider uppercase whitespace-nowrap transition-all duration-200 rounded-sm font-sans ${
                     active
                       ? 'text-gold bg-gold/10 border-b-2 border-gold font-extrabold'
                       : 'text-gray-200 hover:text-gold hover:bg-white/5'
@@ -81,7 +81,7 @@ export const Header: React.FC = () => {
             })}
           </nav>
 
-          {/* Tablet/Medium Navigation (Compact Text) */}
+          {/* Tablet/Medium Navigation (LG Screens) */}
           <nav className="hidden lg:flex xl:hidden items-center gap-0.5">
             {navLinks.map((link) => {
               const active = isNavActive(link.path);
@@ -89,7 +89,7 @@ export const Header: React.FC = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`px-2 py-1.5 text-[11.5px] font-bold tracking-wider uppercase whitespace-nowrap transition-all duration-200 rounded-sm font-sans ${
+                  className={`px-2 py-1.5 text-[11px] font-bold tracking-wider uppercase whitespace-nowrap transition-all duration-200 rounded-sm font-sans ${
                     active
                       ? 'text-gold bg-gold/10 border-b-2 border-gold'
                       : 'text-gray-200 hover:text-gold hover:bg-white/5'
@@ -105,7 +105,7 @@ export const Header: React.FC = () => {
           <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
             <Link
               to="/contact"
-              className="btn-gold text-xs px-5 py-2.5 uppercase font-bold tracking-wider flex items-center gap-2 group shadow-md"
+              className="btn-gold text-xs px-5 py-2 uppercase font-bold tracking-wider flex items-center gap-2 group shadow-md"
             >
               <span>Enquire Now</span>
               <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
@@ -116,14 +116,14 @@ export const Header: React.FC = () => {
           <div className="flex items-center gap-2 lg:hidden">
             <Link
               to="/contact"
-              className="px-3 py-1.5 text-xs font-bold uppercase tracking-wider bg-gold text-navy-dark rounded-sm hover:bg-gold-light transition-colors"
+              className="px-3 py-1 text-xs font-bold uppercase tracking-wider bg-gold text-navy-dark rounded-sm hover:bg-gold-light transition-colors"
             >
               Enquire
             </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-gray-200 hover:text-gold hover:bg-white/5 rounded-sm focus:outline-none focus:ring-2 focus:ring-gold"
+              className="p-1.5 text-gray-200 hover:text-gold hover:bg-white/5 rounded-sm focus:outline-none focus:ring-2 focus:ring-gold"
               aria-label={mobileMenuOpen ? 'Close Menu' : 'Open Menu'}
               aria-expanded={mobileMenuOpen}
             >
@@ -144,7 +144,7 @@ export const Header: React.FC = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`flex items-center justify-between px-4 py-3.5 text-sm font-bold tracking-wider uppercase rounded-sm transition-colors font-sans ${
+                  className={`flex items-center justify-between px-4 py-3 text-sm font-bold tracking-wider uppercase rounded-sm transition-colors font-sans ${
                     active
                       ? 'text-gold bg-gold/15 border-l-4 border-gold'
                       : 'text-gray-200 hover:text-gold hover:bg-navy-surface'
@@ -158,7 +158,7 @@ export const Header: React.FC = () => {
             <div className="pt-6 mt-4 border-t border-navy-light/30">
               <Link
                 to="/contact"
-                className="w-full btn-gold py-4 text-center text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2"
+                className="w-full btn-gold py-3.5 text-center text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2"
               >
                 <span>Request Project Proposal</span>
                 <ArrowRight className="w-4 h-4" />

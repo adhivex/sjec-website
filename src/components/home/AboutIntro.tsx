@@ -71,7 +71,7 @@ export const AboutIntro: React.FC = () => {
           <div className="lg:col-span-5 relative lg:mt-4">
             <div className="relative rounded-sm overflow-hidden border-2 border-border shadow-card group">
               <img
-                src="https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=1200&q=85"
+                src="/images/plant-cement-mill.jpg"
                 alt="SJEC Industrial Substation & Cable Execution"
                 className="w-full h-[460px] object-cover filter contrast-110 group-hover:scale-105 transition-transform duration-700"
               />

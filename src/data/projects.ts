@@ -19,7 +19,7 @@ export const PROJECTS: Project[] = [
       "Grinding mill motor testing and dry run commissioning",
       "Plant street lighting and high mast pole setup"
     ],
-    image: "https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/plant-cement-mill.jpg",
     isFeatured: true
   },
   {
@@ -40,7 +40,7 @@ export const PROJECTS: Project[] = [
       "Field instrumentation loop checking and transmitter calibration",
       "Comprehensive earth pit grid setup and lightning protection"
     ],
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/plant-cement-mill.jpg",
     isFeatured: true
   },
   {
@@ -60,7 +60,7 @@ export const PROJECTS: Project[] = [
       "1000V/500V Megger insulation resistance testing",
       "Motor solo-run testing and interlock confirmation"
     ],
-    image: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/cable-tray-install.jpg",
     isFeatured: true
   },
   {
@@ -80,7 +80,7 @@ export const PROJECTS: Project[] = [
       "Cable tray erection and high-voltage power cable pulling",
       "Substation switchyard auxiliary connections and testing"
     ],
-    image: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/plant-steel-dri.jpg",
     isFeatured: true
   },
   {
@@ -100,7 +100,7 @@ export const PROJECTS: Project[] = [
       "Thousands of meters of multi-core instrumentation and power cabling",
       "Complete lighting installation and emergency illumination"
     ],
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/hero-substation.jpg",
     isFeatured: true
   },
   {
@@ -120,7 +120,7 @@ export const PROJECTS: Project[] = [
       "Instrumentation sensor hookup and transmitter calibration",
       "Final cold run and hot commissioning assistance"
     ],
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/panel-room-mcc.jpg",
     isFeatured: false
   },
   {
@@ -140,7 +140,7 @@ export const PROJECTS: Project[] = [
       "HT motor testing, insulation resistance validation, and commissioning",
       "Zero-harm safety supervision during concurrent plant operations"
     ],
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/hero-bg-plant.jpg",
     isFeatured: false
   }
 ];

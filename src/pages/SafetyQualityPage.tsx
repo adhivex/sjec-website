@@ -55,7 +55,7 @@ export const SafetyQualityPage: React.FC = () => {
             <div className="lg:col-span-5 relative">
               <div className="rounded-sm overflow-hidden border-2 border-border shadow-card">
                 <img
-                  src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1000&q=80"
+                  src="/images/hero-substation.jpg"
                   alt="SJEC Industrial Safety Protocol"
                   className="w-full h-[400px] object-cover"
                 />

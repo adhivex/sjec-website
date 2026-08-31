@@ -2,26 +2,6 @@ import type { Industry } from '../types';
 
 export const INDUSTRIES: Industry[] = [
   {
-    id: "steel-plants",
-    slug: "steel-plants",
-    title: "Steel Plants",
-    subtitle: "Integrated Steel Mills, Rolling Mills & Smelters",
-    description: "High-capacity steel manufacturing demands rugged, heat-resistant electrical and instrumentation infrastructure capable of handling high cyclic loads, heavy drives, and intense electromagnetic interference.",
-    keyExecutionFocus: [
-      "Heavy rolling mill motor cabling & HT drive terminations",
-      "Furnace area instrumentation and high-temperature thermocouples",
-      "Substation switchgear and harmonic filter bank erection",
-      "Overhead crane power rail & festoon electrification"
-    ],
-    typicalScope: [
-      "HT/LT Substation erection up to 33kV",
-      "MCC/PCC panel rooms for melt shop and mill drives",
-      "Heavy duty ladder cable tray installation across blast furnace sections",
-      "Motor testing and cold/hot commissioning"
-    ],
-    image: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80"
-  },
-  {
     id: "cement-plants",
     slug: "cement-plants",
     title: "Cement Plants",
@@ -39,67 +19,27 @@ export const INDUSTRIES: Industry[] = [
       "Cable tray network across Kiln and Pre-heater towers",
       "Robo Lab automation system mechanical and electrical integration"
     ],
-    image: "https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=1200&q=80"
+    image: "/images/plant-cement-mill.jpg"
   },
   {
-    id: "power-plants",
-    slug: "power-plants",
-    title: "Power Plants",
-    subtitle: "Thermal, Captive & Co-generation Energy Facilities",
-    description: "Executing critical electrical cabling, switchyard erection, protection relays, and boiler/turbine instrumentation for captive power generation units in industrial complexes.",
+    id: "steel-plants",
+    slug: "steel-plants",
+    title: "Steel Plants",
+    subtitle: "Integrated Steel Mills, Rolling Mills & Smelters",
+    description: "High-capacity steel manufacturing demands rugged, heat-resistant electrical and instrumentation infrastructure capable of handling high cyclic loads, heavy drives, and intense electromagnetic interference.",
     keyExecutionFocus: [
-      "Generator and step-up transformer termination",
-      "Boiler pressure parts and steam turbine instrumentation",
-      "HT cable laying in underground concrete trenches and pipe racks",
-      "Emergency shutdown (ESD) system wiring and interlocks"
+      "Heavy rolling mill motor cabling & HT drive terminations",
+      "Furnace area instrumentation and high-temperature thermocouples",
+      "Substation switchgear and harmonic filter bank erection",
+      "Overhead crane power rail & festoon electrification"
     ],
     typicalScope: [
-      "Boiler DCS marshalling panel erection and ferrule terminations",
-      "Coal handling plant (CHP) conveyor electrical and pull-cord switches",
-      "1000V / 500V Megger insulation testing of high-voltage feeders",
-      "Cooling tower pump motor commissioning"
+      "HT/LT Substation erection up to 33kV",
+      "MCC/PCC panel rooms for melt shop and mill drives",
+      "Heavy duty ladder cable tray installation across blast furnace sections",
+      "Motor testing and cold/hot commissioning"
     ],
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80"
-  },
-  {
-    id: "pellet-plants",
-    slug: "pellet-plants",
-    title: "Pellet Plants",
-    subtitle: "Iron Ore Beneficiation & Induration Furnace Units",
-    description: "Iron ore pelletization involves complex material conveyance, disc pelletizers, and traveling grate induration machines requiring specialized motor control and instrumentation.",
-    keyExecutionFocus: [
-      "Traveling grate kiln drive and burner instrumentation",
-      "Disc pelletizer variable frequency drive (VFD) panels",
-      "Slurry pump house and thickener electrical infrastructure",
-      "Continuous weighing scale and tachometer calibration"
-    ],
-    typicalScope: [
-      "Execution of multi-thousand MT capacity pellet plant electrification",
-      "HT/LT cable pulling and tray fabrication across induration circuits",
-      "Field sensor and control valve loop checking",
-      "Plant lighting and emergency safety systems"
-    ],
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80"
-  },
-  {
-    id: "fabrication-plants",
-    slug: "fabrication-plants",
-    title: "Fabrication Plants",
-    subtitle: "Heavy Structural Workshops & Machinery Manufacturing",
-    description: "Providing electrical distribution, heavy welding power grids, overhead gantry crane electrification, and workshop automation for structural engineering and equipment fabrication yards.",
-    keyExecutionFocus: [
-      "Welding busbar and multi-operator rectifier grid distribution",
-      "Overhead EOT crane busway and shrouded conductor bar installation",
-      "Heavy hydraulic press and cutting machine electrical hookups",
-      "Industrial ventilation, compressed air line, and workshop illumination"
-    ],
-    typicalScope: [
-      "Power distribution board (PDB) & lighting distribution board (LDB) setup",
-      "Cable tray network throughout fabrication bays",
-      "Earth pit grid testing and lightning protection grounding",
-      "Machine electrical safety interlock wiring"
-    ],
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80"
+    image: "/images/plant-steel-dri.jpg"
   },
   {
     id: "process-plants",
@@ -119,6 +59,66 @@ export const INDUSTRIES: Industry[] = [
       "Kiln temperature profiling and optical pyrometer calibration",
       "HT motor testing, vibration monitoring, and commissioning"
     ],
-    image: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=80"
+    image: "/images/hero-substation.jpg"
+  },
+  {
+    id: "power-plants",
+    slug: "power-plants",
+    title: "Power Plants",
+    subtitle: "Thermal, Captive & Co-generation Energy Facilities",
+    description: "Executing critical electrical cabling, switchyard erection, protection relays, and boiler/turbine instrumentation for captive power generation units in industrial complexes.",
+    keyExecutionFocus: [
+      "Generator and step-up transformer termination",
+      "Boiler pressure parts and steam turbine instrumentation",
+      "HT cable laying in underground concrete trenches and pipe racks",
+      "Emergency shutdown (ESD) system wiring and interlocks"
+    ],
+    typicalScope: [
+      "Boiler DCS marshalling panel erection and ferrule terminations",
+      "Coal handling plant (CHP) conveyor electrical and pull-cord switches",
+      "1000V / 500V Megger insulation testing of high-voltage feeders",
+      "Cooling tower pump motor commissioning"
+    ],
+    image: "/images/hero-bg-plant.jpg"
+  },
+  {
+    id: "pellet-plants",
+    slug: "pellet-plants",
+    title: "Pellet Plants",
+    subtitle: "Iron Ore Beneficiation & Induration Furnace Units",
+    description: "Iron ore pelletization involves complex material conveyance, disc pelletizers, and traveling grate induration machines requiring specialized motor control and instrumentation.",
+    keyExecutionFocus: [
+      "Traveling grate kiln drive and burner instrumentation",
+      "Disc pelletizer variable frequency drive (VFD) panels",
+      "Slurry pump house and thickener electrical infrastructure",
+      "Continuous weighing scale and tachometer calibration"
+    ],
+    typicalScope: [
+      "Execution of multi-thousand MT capacity pellet plant electrification",
+      "HT/LT cable pulling and tray fabrication across induration circuits",
+      "Field sensor and control valve loop checking",
+      "Plant lighting and emergency safety systems"
+    ],
+    image: "/images/cable-tray-install.jpg"
+  },
+  {
+    id: "fabrication-plants",
+    slug: "fabrication-plants",
+    title: "Fabrication Plants",
+    subtitle: "Heavy Structural Workshops & Machinery Manufacturing",
+    description: "Providing electrical distribution, heavy welding power grids, overhead gantry crane electrification, and workshop automation for structural engineering and equipment fabrication yards.",
+    keyExecutionFocus: [
+      "Welding busbar and multi-operator rectifier grid distribution",
+      "Overhead EOT crane busway and shrouded conductor bar installation",
+      "Heavy hydraulic press and cutting machine electrical hookups",
+      "Industrial ventilation, compressed air line, and workshop illumination"
+    ],
+    typicalScope: [
+      "Power distribution board (PDB) & lighting distribution board (LDB) setup",
+      "Cable tray network throughout fabrication bays",
+      "Earth pit grid testing and lightning protection grounding",
+      "Machine electrical safety interlock wiring"
+    ],
+    image: "/images/panel-room-mcc.jpg"
   }
 ];

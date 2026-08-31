@@ -16,7 +16,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
       {/* Background industrial graphic */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=2000&q=85"
+          src="/images/hero-bg-plant.jpg"
           alt="Industrial Execution"
           className="w-full h-full object-cover opacity-15 filter contrast-125"
         />

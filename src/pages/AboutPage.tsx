@@ -76,7 +76,7 @@ export const AboutPage: React.FC = () => {
             <div className="lg:col-span-5 relative">
               <div className="rounded-sm overflow-hidden border-2 border-border shadow-card">
                 <img
-                  src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=85"
+                  src="/images/plant-steel-dri.jpg"
                   alt="Industrial Plant Execution"
                   className="w-full h-[460px] object-cover filter contrast-110"
                 />

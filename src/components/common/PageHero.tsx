@@ -15,7 +15,7 @@ export const PageHero: React.FC<PageHeroProps> = ({
   title,
   description,
   breadcrumbs = [],
-  bgImage = "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=2000&q=85",
+  bgImage = "/images/hero-bg-plant.jpg",
 }) => {
   return (
     <section className="relative bg-navy-deep text-white pt-32 pb-18 sm:pt-36 sm:pb-24 overflow-hidden border-b border-navy-light/30">
